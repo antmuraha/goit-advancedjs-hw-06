@@ -1,7 +1,7 @@
 /*
-  У вас є тип AllType. Існує функція compare, яка приймає два об'єкти. Ці об'єкти містять поля AllType. 
-  Ваше завдання – використовувати Pick та generics для вказівки, що поля цих об'єктів належать AllType.
-  Функція compare повинна повертати AllType.
+  You have the AllType type. There is a function compare that takes two objects. These objects contain the fields of AllType.
+  Your task is to use Pick and generics to specify that the fields of these objects belong to AllType.
+  The compare function should return AllType.
 */
 
 type AllType = {
@@ -11,7 +11,7 @@ type AllType = {
   weight: number
 }
 
-function compare (top, bottom): AllType {
+function compare (top: Pick<AllType, 'name' | 'color'>, bottom: Pick<AllType, 'position'| 'weight'>): AllType {
   return {
     name: top.name,
     color: top.color,
